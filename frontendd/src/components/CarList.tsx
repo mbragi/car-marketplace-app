@@ -1,8 +1,8 @@
 import React from "react";
-import CarCard from "./CarCard";
+import CarCard, {Car} from "./CarCard";
 
 interface CarListProps {
-  cars: any[];
+  cars: Car[];
   onBuy: (id: number, price: string) => void;
   isLoading?: boolean;
 }

@@ -7,6 +7,7 @@ import {
 } from "../../hooks/use-contract.hook";
 import CarList from "../../components/CarList";
 import ListCarForm from "../../components/ListCarForm";
+import { Car } from "../../components/CarCard";
 
 interface ListParams {
   name: string;
@@ -20,13 +21,15 @@ interface BuyParams {
   price: string;
 }
 
+
+
 const Home: React.FC = () => {
-  const { cars, refetch } = useCarMarketplaceData();
-  const [carList, setCarList] = useState<any[]>([]);
+  const { cars, refetch } = useCarMarketplaceData() as { cars: Car[], refetch: () => void };
+  const [carList, setCarList] = useState<Car[]>([]);
   const [listParams, setListParams] = useState<ListParams | null>(null);
   const [buyParams, setBuyParams] = useState<BuyParams | null>(null);
   const [searchParams] = useSearchParams();
-  const activeView = searchParams.get("view") || "marketplace";
+  const activeView = searchParams.get("view") ?? "marketplace";
 
   useEffect(() => {
     if (cars) {
