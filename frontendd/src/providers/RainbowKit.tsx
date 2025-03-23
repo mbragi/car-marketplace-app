@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   darkTheme,
