@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
                 to="/marketplace?view=list"
                 className="text-lg text-gray-700 hover:text-yellow-600 transition-colors"
               >
-                Sell Your Car
+                List Your Car
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ const NavBar: React.FC = () => {
                 className="text-lg text-gray-700 hover:text-yellow-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Sell Your Car
+                List Your Car
               </Link>
               <ConnectButton
                 showBalance={false}

@@ -25,7 +25,7 @@ export function useListCar(
 ) {
   const { isConnected } = useAccount();
   const { writeContract, isPending } = useWriteContract();
-
+  const { refetch } = useCarMarketplaceData();
   const listCar = () => {
     if (!isConnected) {
       console.error("Wallet not connected");
@@ -44,6 +44,7 @@ export function useListCar(
         onSuccess: () => {
           console.log("Car listed successfully");
           toast.success("Car listed successfully!");
+          refetch();
         },
         onError: (error) => {
           console.error("Error listing car:", error);

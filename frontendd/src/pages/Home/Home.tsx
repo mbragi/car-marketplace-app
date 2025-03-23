@@ -7,7 +7,6 @@ import {
 } from "../../hooks/use-contract.hook";
 import CarList from "../../components/CarList";
 import ListCarForm from "../../components/ListCarForm";
-import { toast } from "react-hot-toast";
 
 interface ListParams {
   name: string;
@@ -51,7 +50,6 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (listParams) {
       listCar();
-      toast.success("Car listed successfully!");
       refetch();
       setListParams(null);
     }
@@ -61,7 +59,6 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (buyParams) {
       buyCar();
-      toast.success("Car purchased successfully!");
       refetch();
       setBuyParams(null);
     }
@@ -87,7 +84,7 @@ const Home: React.FC = () => {
 
         {activeView === "marketplace" && (
           <div>
-            <h2 className="text-2xl font-bold mb-4">Available Cars</h2>
+            <h2 className="text-2xl font-bold mb-4 text-black">Available Cars</h2>
             <CarList cars={carList} onBuy={handleBuyCar} isLoading={isBuying} />
           </div>
         )}
